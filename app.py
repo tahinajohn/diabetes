@@ -1,12 +1,12 @@
 import streamlit as st
 import pickle
 
-from pages.exploration import show_exploration
-from pages.interpretation import show_interpretation
-from pages.metrics import show_metric
-from pages.model_choice import show_model_choice
-from pages.prediction import show_prediction
-from pages.problem import show_problem
+from content.exploration import show_exploration
+from content.interpretation import show_interpretation
+from content.metrics import show_metric
+from content.model_choice import show_model_choice
+from content.prediction import show_prediction
+from content.problem import show_problem
 
 # Configuration de la page
 st.set_page_config(page_title="Prédiction Diabète", page_icon="🏥", layout="wide")

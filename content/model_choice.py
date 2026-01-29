@@ -32,36 +32,4 @@ def show_model_choice():
     - Performance équilibrée
     """)
     
-    with st.expander("💻 Voir le code d'entraînement"):
-        st.code("""
-from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.preprocessing import StandardScaler
-import pickle
-
-# Préparation des données
-X = df.drop('Outcome', axis=1)
-y = df['Outcome']
-
-# Division train/test
-X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.2, random_state=42, stratify=y
-)
-
-# Standardisation
-scaler = StandardScaler()
-X_train_scaled = scaler.fit_transform(X_train)
-X_test_scaled = scaler.transform(X_test)
-
-# Entraînement
-model = RandomForestClassifier(
-    n_estimators=100,
-    max_depth=10,
-    random_state=42
-)
-model.fit(X_train_scaled, y_train)
-
-# Sauvegarde
-pickle.dump(model, open('model.pkl', 'wb'))
-pickle.dump(scaler, open('scaler.pkl', 'wb'))
-        """, language='python')
+   
